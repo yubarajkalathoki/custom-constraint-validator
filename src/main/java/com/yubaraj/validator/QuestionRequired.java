@@ -9,6 +9,12 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+/**
+ * Annotation to validate jComboBox.
+ * 
+ * @author Yuba Raj Kalathoki
+ * @since 0.1.0
+ */
 @Target({ ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = QuestionRequiredValidator.class)

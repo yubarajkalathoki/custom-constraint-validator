@@ -17,6 +17,14 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+/**
+ * Makes GUI frame with components {@link JLabel}, {@link JComboBox},
+ * {@link JTextArea} and {@link JButton}.
+ * 
+ * @author Yuba Raj Kalathoki
+ * @since 0.1.0
+ */
+
 public class JComboBoxDemo {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Combo Box demo.");
@@ -24,7 +32,6 @@ public class JComboBoxDemo {
 		JPanel panel = new JPanel(new FlowLayout());
 		JLabel label = new JLabel("Choose Question: ");
 		panel.add(label);
-
 		JComboBox<String> jComboBox = new JComboBox<>();
 		jComboBox.addItem("Security questions");
 		jComboBox.addItem("Question 1");
@@ -32,35 +39,23 @@ public class JComboBoxDemo {
 		jComboBox.addItem("Question 3");
 		jComboBox.addItem("Question 4");
 		jComboBox.setSize(50, 10);
-
 		panel.add(jComboBox);
-
 		JLabel label1 = new JLabel("Answer: ");
-
 		panel.add(label1);
-
 		JTextArea textArea = new JTextArea(5, 15);
-
 		panel.add(textArea);
-
 		JButton button = new JButton("Save");
-
 		panel.add(new JLabel());
 		panel.add(button);
-
 		button.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
 					Validator validator = validatorFactory.getValidator();
-
 					String value = jComboBox.getSelectedItem().toString();
-					MyModel model = new MyModel(value,textArea.getText());
-
+					MyModel model = new MyModel(value, textArea.getText());
 					Set<ConstraintViolation<MyModel>> constraintViolations = validator.validate(model);
-
 					if (!constraintViolations.isEmpty()) {
 						String error = "";
 						for (ConstraintViolation<MyModel> constraintViolation : constraintViolations) {
@@ -68,15 +63,12 @@ public class JComboBoxDemo {
 							JOptionPane.showMessageDialog(null, error);
 						}
 					}
-
 				} catch (Exception ex) {
 					ex.printStackTrace();
 					JOptionPane.showMessageDialog(null, ex.getMessage());
 				}
-
 			}
 		});
-
 		frame.add(panel);
 		frame.setSize(300, 400);
 		frame.setVisible(true);

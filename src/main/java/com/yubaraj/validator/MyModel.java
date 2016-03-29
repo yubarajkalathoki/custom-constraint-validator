@@ -1,12 +1,14 @@
 package com.yubaraj.validator;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
+/**
+ * Sample model class.
+ * 
+ * @author Yuba Raj Kalathoki
+ * @since 0.1.0
+ */
 public class MyModel {
-
 	@QuestionRequired
 	private String question;
-	//@NotEmpty
 	private String answer;
 
 	public MyModel(String question, String answer) {
@@ -29,5 +31,4 @@ public class MyModel {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
-
 }
