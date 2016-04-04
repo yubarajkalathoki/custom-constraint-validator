@@ -9,13 +9,13 @@ import javax.validation.ConstraintValidatorContext;
  * @author Yuba Raj Kalathoki
  * @since 0.1.0
  */
-public class QuestionRequiredValidator implements ConstraintValidator<QuestionRequired, String> {
+public class ComboBoxValidator implements ConstraintValidator<ValidComboBox, String> {
 
 	private String value;
 
 	@Override
-	public void initialize(QuestionRequired arg0) {
-		this.value = QuestionRequired.value;
+	public void initialize(ValidComboBox arg0) {
+		this.value = ValidComboBox.value;
 
 	}
 

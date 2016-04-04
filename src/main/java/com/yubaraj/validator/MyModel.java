@@ -7,7 +7,7 @@ package com.yubaraj.validator;
  * @since 0.1.0
  */
 public class MyModel {
-	@QuestionRequired
+	@ValidComboBox
 	private String question;
 	private String answer;
 

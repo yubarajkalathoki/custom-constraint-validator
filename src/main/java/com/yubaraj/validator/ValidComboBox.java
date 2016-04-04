@@ -17,9 +17,9 @@ import javax.validation.Payload;
  */
 @Target({ ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = QuestionRequiredValidator.class)
+@Constraint(validatedBy = ComboBoxValidator.class)
 @Documented
-public @interface QuestionRequired {
+public @interface ValidComboBox {
 	String value = "Security questions";
 
 	String message() default "Please select a scurity question.";
