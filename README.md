@@ -23,3 +23,5 @@ This project is to validate JComboBox with hibernate custom constraint validator
 		<artifactId>javax.el-api</artifactId>
 		<version>2.2.4</version>
 	</dependency>
+
+This is the answer for question:https://stackoverflow.com/questions/36276360/hibernate-validator-for-combobox/36279991#36279991
